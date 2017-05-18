@@ -2,7 +2,7 @@
 """
 Live reloader that detects module file changes and reloads the program.
 """
-from __future__ import absolute_import
+
 
 # Standard imports
 import os
@@ -21,7 +21,7 @@ try:
     from _thread import interrupt_main
 except ImportError:
     # Python 2
-    from thread import interrupt_main
+    from _thread import interrupt_main
 
 
 # Version
@@ -343,7 +343,7 @@ class LiveReloader(FileSystemEventHandler):
         # If the node is not leaf node
         else:
             # For each child node
-            for child_path_part, child_node in node.items():
+            for child_path_part, child_node in list(node.items()):
                 # Get the child node's path parts
                 child_path_part_s = path_parts + (child_path_part,)
 

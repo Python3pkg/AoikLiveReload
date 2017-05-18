@@ -2,7 +2,7 @@
 """
 Demo for the live reloading of Flask server.
 """
-from __future__ import absolute_import
+
 
 # Standard imports
 import os
